@@ -1,25 +1,18 @@
-import React, { useState } from "react";
-
-export default function TodoForm(props) {
-  const [todo, setTodo] = useState("");
-
-  const onChange = (e) => {
-    setTodo({
-      todo: e.target.value,
-    });
-  };
-  const onSubmit = (e) => {
-    e.preventDefault();
-    props.handleAddTodo(todo);
-    setTodo({
-      todo: "",
-    });
-  };
-
+import React from "react";
+const TodoForm = (props) => {
   return (
-    <form onSubmit={onSubmit}>
-      <input type="text" value="todo" onChange={onChange} name="item" />
-      <button>Add</button>
+    <form>
+      <input
+        onChange={props.handleTodoChange}
+        type="text"
+        name="todo"
+        value={props.value}
+        placeholder="...todo"
+      />
+      <button onClick={props.handleAddTodo}>Add Todo</button>
+      <button onClick={props.handleClearTodos}>Clear Completed</button>
     </form>
   );
-}
+};
+
+export default TodoForm;
