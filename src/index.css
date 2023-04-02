@@ -74,7 +74,7 @@ form {
   justify-content: flex-end;
 }
 
-form > input {
+form.input {
   background-color: #2d2d37;
   border: 0;
   padding: 6px 0;

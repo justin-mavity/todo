@@ -1,4 +1,6 @@
 import React from "react";
+
+// This is the form and how you add a Todo to the list
 const TodoForm = (props) => {
   return (
     <form>
